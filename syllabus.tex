@@ -1,15 +1,22 @@
 %----------------------------------------------------------------------------
-% Chemistry 352 Syllabus
-% Author: Dale J. Brugh
+% Course Syllabus for Chemistry 352 (c) 2015 by Dale J. Brugh
+
+% Course Syllabus for Chemistry 352 is released under a
+% Creative Commons Attribution-ShareAlike 4.0 International License.
+
+% See http://creativecommons.org/licenses/by-sa/4.0/ for
+% a description of your rights under this license. 
 %----------------------------------------------------------------------------
 \documentclass[letterpaper,oneside,onecolumn,11pt,article]{memoir}
+%
+% --- LOAD PACKAGES ---
+%
 \usepackage[T1]{fontenc}            % use T1 font encoding
 \usepackage{textcomp}
 \usepackage{courier}                % set courier as typewriter font
 \usepackage{times}                  % set times as text font
 \usepackage[scaled=0.92]{helvet}    % set Helvetica as the sans-serif font
 \usepackage{mtpro2}
-
 \usepackage{setspace}
 \usepackage{amsmath}
 \usepackage{graphicx,color}
@@ -18,31 +25,29 @@
 \usepackage{relsize,fancyvrb}
 \usepackage{verbatim}
 \usepackage{caption}
-
+\usepackage{paralist}
 \usepackage{boxedminipage}
-
-\usepackage{hyperref}
-\usepackage[filehooks]{svn-multi} % For typesetting svn Id
-\svnid{$Id: courseinfo.tex 911 2012-01-11 14:17:14Z djbrugh $}
+\usepackage{enumerate}
+\usepackage[bookmarks=true]{hyperref}
+%
+% --- HYPER SETUP ---
+%
 \hypersetup{
-    bookmarks=true,         % show bookmarks bar?
     unicode=false,          % non-Latin characters in Acrobat’s bookmarks
     pdftoolbar=true,        % show Acrobat’s toolbar?
     pdfmenubar=true,        % show Acrobat’s menu?
     pdffitwindow=true,      % page fit to window when opened
-    pdftitle={Course Information: Chemistry 352 / Spring 2014}, 
+    pdftitle={Syllabus: Chemistry 352 / Spring 2015}, 
     pdfauthor={Dale J. Brugh},     % author
     pdfsubject={Physical Chemistry},   % subject of the document
     pdfnewwindow=true,      % links in new window
-    pdfkeywords={classes, ch352s14}, % list of keywords
+    pdfkeywords={classes, ch352s15}, % list of keywords
     colorlinks=true,       % false: boxed links; true: colored links
     linkcolor=black,          % color of internal links
     citecolor=green,        % color of links to bibliography
     filecolor=magenta,      % color of file links
-    urlcolor=cyan           % color of external links
+    urlcolor=black           % color of external links
 }
-
-
 \definecolor{nicered}{rgb}{.647,.129,.149}
 \definecolor{mutedgrey}{rgb}{0.4,0.4,0.4}
 \definecolor{shadecolor}{cmyk}{0,0,0.25,0.07}
@@ -50,29 +55,24 @@
 \definecolor{MarginRed}{rgb}{0.8,0.0,0.0}
 \definecolor{MarginBlue}{rgb}{0.2,0.0,1.0}
 \definecolor{MarginGrey}{rgb}{0.4,0.4,0.4}
-
 %\renewcommand{\chapnumfont}{\bfseries\Huge\sffamily}
 %\renewcommand{\chaptitlefont}{\bfseries\Large\sffamily}
-
 \setsecheadstyle{\bfseries\Large\sffamily\raggedright}
 \setsubsecheadstyle{\bfseries\large\sffamily\raggedright}
 \setsubsubsecheadstyle{\bfseries\normalsize\sffamily\raggedright}
 \renewcommand \thesection{\bfseries\arabic{section}}
-
-% \makeatletter 
-% \newcommand\addRevisionData{%
-% \begin{picture}(0,0)% 
-%   \put(-125,-10){%
-%       \tiny% 
-%       \expandafter\@ifmtarg\expandafter{\svnfiledate}{}{%
-%       {\copyright~Dale J. Brugh 
-%       \svnfileyear-\svnfilemonth-\svnfileday
-%       \enspace (revision \svnfilerev)}
-% }% 
-% }%
-% \end{picture}%
-% }
-
+\makeatletter 
+\newcommand\addRevisionData{%
+\begin{picture}(0,0)% 
+    \put(-110,-5){%
+        \tiny% 
+        {%
+        {Published \today \enspace \copyright~Dale J. Brugh 
+        }
+}% 
+}%
+\end{picture}%
+}
 \flushbottom
 \setstocksize{11in}{8.5in}
 %\setlength{\parskip}{5pt}
@@ -93,28 +93,23 @@
 %
 \makepagestyle{courseinformation}
 \makerunningwidth{courseinformation}{\headwidth}
-
 \makeheadrule{courseinformation}{\headwidth}{\normalrulethickness}
 \makeheadposition{courseinformation}{flushright}{flushleft}{flushleft}{flushleft}
 \makeoddhead{courseinformation}%
-    {\sffamily Course Information: Chemistry 352 / Spring 2014}{}{\sffamily\thepage}
+    {\sffamily Course Syllabus: Chemistry 351 / Spring 2015}{}{\sffamily\thepage}
 
     \makeevenfoot{courseinformation}{}{}{}
     \makeoddfoot{courseinformation}{}{}{}
-
 \makepagestyle{courseinformationtitle}
 \makerunningwidth{courseinformationtitle}{\headwidth}
 \makeheadposition{courseinformationtitle}{flushright}{flushleft}{flushleft}{flushleft}
     \makeevenfoot{courseinformationtitle}{}{}{}
     \makeoddfoot{courseinformationtitle}{}{}{}
-
 \pagestyle{courseinformation}
-
 \captionsetup{labelsep=colon,aboveskip=0.25cm,justification=RaggedRight,singlelinecheck=false,labelfont={bf,sf}}
-
-%===========================================================================
-% Margin Figure Command
-%===========================================================================
+%
+% --- MARGIN FIGURE COMMAND ---
+%
 \newcommand{\marginfigures}[4]{
 \marginpar{\centering
 \includegraphics[width=#1]{#2}
@@ -123,49 +118,48 @@
 \captionof{figure}{#3}
 \label{#4}}%
 }%
-
-%==========================================================================
-% Margin Note Command
-%==========================================================================
-
+%
+% --- MARGIN NOTE COMMAND ---
+%
 \newcommand{\marginnote}[2]
 {%
 \marginpar{\raggedright\vspace{#1}\begin{Spacing}{0.65}\sffamily{{\tiny$\blacktriangleright$~\scriptsize#2}}\end{Spacing}} %
 }
-
-%===========================================================================
-% Set Up The Title
-%===========================================================================
+%
+% --- SET UP TITLE ---
+%
 \setlength{\droptitle}{0.0in}
 \backmatter
-\pretitle{\noindent\huge\sffamily Course Information \LARGE\par\noindent} 
+\pretitle{\noindent\huge\sffamily Course Syllabus \LARGE\par\noindent} 
 \posttitle{\par\vskip 2.0em}
 \preauthor{}
 \postauthor{\par}
 \predate{}
 \postdate{\noindent\rule{\linewidth}{0.3pt}}
-
-\title{Chemistry 352 / Spring 2014}
+\title{Chemistry 351 / Spring 2015}
 \date{}
 \author{}
-
-%============================================================================
-% Begin Document
-%============================================================================
-
+%
+% --- BEGIN DOCUMENT ---
+%
 \begin{document}
 \setsecnumdepth{subsubsection}
 \maketitle
 %\setsecnumdepth{subsection}
 \thispagestyle{courseinformationtitle}
-
-\section{The Instructor}
+%
+% --- INSTRUCTOR ---
+%
+\section{Instructor}
 \begin{tabular}{rl|rl}
-Name: & Dr. Dale J. Brugh & Office Location: & SCSC 262 \\
-Email: & djbrugh@owu.edu & Office Phone: & 740-368-3530 \\
+Name: & Dr. Dale J. Brugh & Office Phone: & 740-368-3530 \\
+Email: & \href{mailto:djbrugh@owu.edu}{djbrugh@owu.edu} & Cell Phone: & 614-746-2397 \\
+Office: & SCSC 262 & &  \\
 \end{tabular}
-
-\section{Laboratory Meetings}
+%
+% --- MEETINGS ---
+%
+\section{Meetings}
 \begin{tabular}{crcrl}
 M & 1:10 p.m. & to & 4:00 p.m. & SCSC 355 \\
 \end{tabular}
@@ -175,9 +169,9 @@ The course web site is at http://dephlo.net/pchemlab. The course website is an i
 
 \section{Laboratory Materials}
 The following items will be used in this laboratory. 
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item \textit{Exploring Chemistry with Electronic Structure Methods} by James B. Foresman and \AE leen Frisch, Second Edition, Gaussian, Inc. (1996). ISBN-10: 0963676938, ISBN-13: 978-0963676931.
-\item \emph{Physical Chemistry} with MasteringChemistry by Thomas Engel and Phillip Reid, Third Edition, Prentice Hall (2013).  ISBN-13: 9780321766205
+\item \emph{Physical Chemistry} by Thomas Engel and Phillip Reid, Third Edition, Prentice Hall (2013).  ISBN-13: 978-0321812001
 \item \emph{Quanta, Matter, and Change} by Peter Atkins, Julio de Paula, and Ronald Friedman, First Edition, W.H. Freeman and Company (2009). ISBN-10: 07167-6117-3, ISBN-13: 978-0-7167-6117-4.
 \end{enumerate}
 
@@ -199,61 +193,87 @@ Frequency Calculations & Solutions \\
 \bottomrule
 \end{tabular}
 \end{table}
-
+%
+% --- LABORATORY GOALS ---
+%
 \section{Laboratory Goals}
 This laboratory has several goals. Each action I take is designed to move us closer to achieving one or all of these goals. My goals in this laboratory are
-\begin{enumerate}
+\begin{enumerate}[1.]
 \item To provide you with an overview of molecular modeling and electronic structure techniques for computing properties of molecules,
 \item To give you practice carrying out molecular modeling and electronic structure calculations on molecules using a research-grade tool,
 \item To make you better able to recognize, understand, and interpret molecular modeling and electronic structure results presented in the literature,
 \item To make you better able to formulate chemical questions that can be answered with molecular modeling and electronic structure methods, and
 \item To provide you with the tools to continue your education in chemistry in the very best graduate programs on planet Earth.
 \end{enumerate}
-
+%
+% --- LABORATORY EXPECTATIONS ---
+%
 \section{Laboratory Expectations}
-You are expected to read all the assigned readings, to work all the assigned exercises, and to come to each laboratory meeting prepared to participate fully. You are expected to display a high level of independence and a strong willingness to solve problems through your own troubleshooting. In short, you are expected to be professional. It is also assumed that you are passionately interested in chemistry.
-
+You are expected to read the assigned readings and to come to each laboratory meeting prepared to participate. You are expected to display a high level of independence and a strong willingness to solve problems through your own troubleshooting. In short, you are expected to be professional. It is assumed that you are passionate about chemistry.
+%
+% --- WEEKLY ROUTINE ---
+%
 \section{Weekly Routine}
-During laboratory meetings you will work on projects intended to illustrate particular concepts in computational chemistry and to challenge your problem solving abilities. A pre-lab assignment will typically be assigned for each laboratory meeting. A report will be due upon completion of each project. For the last one-third of the semester, laboratory meetings will be dedicated to work on a single independent project of your choosing. There will be no weekly pre-lab assignments or weekly reports for this part of the course. A detailed schedule can be found on the course website.
-
+During \marginnote{-0.1in}{All projects are completed as part of an assigned team.} laboratory meetings you will work on projects intended to illustrate particular concepts in computational chemistry and to challenge your problem solving abilities. Projects will span one or two weeks. A pre-lab reading will typically be assigned for each project. A report will be due upon completion of each project. For the last one-third of the semester, laboratory meetings will be dedicated to work on a single independent project of your choosing. A detailed schedule can be found on the course website.
+%
+% --- THINGS I GRADE ---
+%
 \section{Things I Grade}
-You and I will determine your progress in this laboratory using the scores derived from evaluating your laboratory notebook, reports, final project, and final exam. This section provides details for each of these.
-
-\subsection{Laboratory Notebook}
-Each of you will maintain a laboratory notebook as a complete record of your work both in and out of the laboratory. All your work should be recorded in a laboratory notebook. Guidelines for keeping a laboratory notebook can be found on the course web site. I will evaluate your laboratory notebook and score it on a 100 point scale at least 2 times during the semester. Evaluations will take place at random times. Since your laboratory notebook will be kept as a Google document, I can evaluate your notebook at any time without warning.
-
-\subsection{Reports}
-For each laboratory project, you must complete a brief written report consisting of three sections: abstract, procedure, and results. Reports will be evaluated on a 100 point scale for clarity, presentation, and accuracy. Details for preparing reports and their due dates and times can be found on the course website.
-
+You and I will determine your progress in this laboratory using the scores derived from evaluating your project reports, final project, and final exam. This section provides details for each of these.
+%
+% --- Project Reports ---
+%
+\subsection{Project Reports}
+For \marginnote{-0.1in}{Each team submits one report, and all members of the team receive the same score.} each laboratory project, you must complete a written report consisting of three sections: abstract, procedure, and results. You must also include references. Reports will be evaluated for clarity, presentation, and accuracy. Work presented in reports must be substantiated by your laboratory notebook. Details for preparing reports and their due dates and times can be found on the course website. Each report will be evaluated on a 200-point scale. Your lowest single laboratory report score is dropped before computing your laboratory score. 
+%
+% --- Final Project ---
+%
 \subsection{Final Project}
-During the last third of the semester, laboratory meetings will be dedicated to work on a self-designed final project. Your work on this final project must be presented in a formal written report and an oral presentation. The combination of your formal report, oral presentation, and supporting work will be evaluated on a 200 point scale with 100 points dedicated to the report and 100 points dedicated to the presentation. 
-
+During \marginnote{-0.1in}{The final project may completed as part of a team or individually.} the last third of the semester, laboratory meetings will be dedicated to work on a self-designed final project. Your work on this final project must be presented in a formal written report and an oral presentation. The combination of your formal report, oral presentation, and supporting work will be evaluated on a 200 point scale with 100 points dedicated to the report and 100 points dedicated to the presentation. Work presented in the final report and presentation must be substantiated by your laboratory notebook. 
+%
+% --- Final Exam ---
+%
 \subsection{Final Exam}
-A final exam will be given during one of the final exam time slots for MWF afternoon courses. The final exam will consist of questions about carrying out molecular modeling and electronic structure calculations. It will also consist of a practical in which you have to carry out computations. You will be free to use your laboratory notebook during the exam; it is therefore in your best interest to keep a detailed laboratory record of your work. 
-
-\section{Things I Do Not Grade}
-You will spend a lot of time completing pre-lab assignments, but there is no separate grade for pre-lab assignments. 
-
+A final exam will be given during one of the final exam time slots for MWF afternoon courses. The final exam will consist of questions about carrying out molecular modeling and electronic structure calculations. It will also consist of a practical in which you have to carry out computations. You can use your laboratory notebook during the exam; it is therefore in your best interest to keep a detailed record of your laboratory work. 
+%
+% --- LABORATORY NOTEBOOK ---
+%
+\section{Laboratory Notebook}
+Each of you must maintain a laboratory notebook as a complete record of all work in and out of the laboratory. Guidelines for keeping a laboratory notebook can be found on the course web site. I will not evaluate your laboratory notebook, but all evaluated work must be supported by your laboratory notebook. Points may be lost on evaluated work if your claims are not supported by your laboratory notebook. 
+%
+% --- COURSE LETTER GRADE ---
+%
 \section{Course Letter Grade}
-Your course score, from which your course letter grade is derived, will be calculated as a weighted average of the scores you earn on evaluations of your laboratory notebook, reports, final project, and final exam. The weights to be applied to each evaluation item are shown in Table~\ref{tab:weights}.
-
+Your \marginnote{-0.1in}{Evaluation Weights \\ Project Reports: 30\% \\ Final Project: 40\% \\ Final Exam: 30\%} course score will be calculated as a weighted average of the scores you earn on evaluation of the project reports ($30\%$), final project ($40\%$), and final exam ($30\%$). 
+%
+% --- LETTER GRADE ---
+%
+\section{Letter Grade}
+Letter grades are assigned at the end of the course according to the minimum course score requirements listed in Table~\ref{tab:lettergrades}. Course scores below $55\%$ are considered failing. Please see \href{http://dephlo.net/lettergrades}{dephlo.net/lettergrades} for more detail about how your course letter grade is determined. 
 \begin{table}[h]
-\caption{\sffamily Weight of items contributing to your final course grade.}
-\label{tab:weights}
-\begin{tabular}{r|l} \toprule
-\textbf{Evaluation Item} & \textbf{Weight} \\ \hline
-Laboratory Notebook & 25\% \\
-Weekly Reports & 25\% \\
-Final Project & 25\% \\
-Final Exam & 25\% \\
+\caption{\sffamily Minimum course scores necessary for each letter grade.}
+\label{tab:lettergrades}
+\begin{tabular}{cl||cl} \toprule
+\textbf{Minimum Score} & \textbf{Letter Grade} & \textbf{Minimum Score} & \textbf{Letter Grade} \\ \hline
+97 & \hspace{0.3in}A$+$ & 72 & \hspace{0.3in}C$+$ \\
+88 & \hspace{0.3in}A & 68 & \hspace{0.3in}C \\
+85 & \hspace{0.3in}A$-$ & 65 & \hspace{0.3in}C$-$ \\
+82 & \hspace{0.3in}B$+$ & 62 & \hspace{0.3in}D$+$ \\
+78 & \hspace{0.3in}B & 58 & \hspace{0.3in}D \\
+75 & \hspace{0.3in}B$-$ & 55 & \hspace{0.3in}D$-$ \\
 \bottomrule
 \end{tabular}
 \end{table}
+%
+% --- ADDITIONAL INFORMATION ---
+%
+\section{Additional Information}
+Please see the course website at \href{http://dephlo.net/pchemlab}{dephlo.net/pchemlab} for additional information such as suggestions for success, detailed course policies, problem set guidelines, course schedule, and solutions. 
+%
+% ---LICENSE AND SOURCE CODE ---
+%
+\section{License and Source Code}
+\copyright\ 2015 by Dale J. Brugh. Course Syllabus for Chemistry 352 (2015) is made available under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0). See \href{https://creativecommons.org/licenses/by-sa/4.0/}{https://creativecommons.org/licenses/by-sa/4.0/} for details about your rights under this license. The \LaTeX\ source code is available under the same license from Github at \href{https://github.com/djbrugh/chem352}{https://github.com/djbrugh/chem352}. \marginpar{\vspace{-0.85in}\hfill\noindent\href{https://creativecommons.org/licenses/by-sa/4.0/}{\includegraphics[width=1in]{figs/cc-by-sa.pdf}}}
 
-At the end of the course your course score is translated into a course letter grade according to the procedure explained at dephlo.net/lettergrades. 
-
-The course letter grade you earn is not a reflection of your worth as a human being. If you work hard throughout the course and learn something about chemistry or yourself, the outcome is positive regardless of the letter grade earned. 
-
-Your effort in this course is not a formal part of determining your course letter grade except as measured through performance. This will frustrate some of you. Keep in mind, however, that effort and attitude do matter if your course score is borderline. See dephlo.net/lettergrades for more detail. 
 
 \end{document}
