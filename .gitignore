@@ -4,3 +4,6 @@ syllabus.log
 syllabus.out
 syllabus.pdf
 syllabus.synctex.gz
+syllabus.fls
+.DS_Store
+build
